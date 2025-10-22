@@ -11,7 +11,7 @@ const opts = {
 passport.use(
     new Strategy(opts, async (payload, done) => {
         try {
-            const user = await usermodel.findById({
+            const user = await usermodel.findOne({
                 email : payload.email
             })
 

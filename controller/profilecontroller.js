@@ -17,9 +17,11 @@ export const epep = (req, res) => {
 
 export const privateProfile = async (req, res) => {
     try {
+        const user = req.user;
+
         res.status(200).json({
             message: "private profile berhasil diakses",
-            data: null,
+            data: user,
         });
     } catch (error){
         res.status(500).json({
